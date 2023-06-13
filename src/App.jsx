@@ -1,38 +1,28 @@
+import { useState } from "react";
 import "./app.scss";
+import BmiForm from "./components/BmiForm";
+import Header from "./components/Header";
+import Result from "./components/Result";
 
 function App() {
+  const [heigth, setHeight] = useState("");
+  const [weigth, setWeigth] = useState("");
+  const [result, setResult] = useState("");
+
   return (
-    <>
-      <div class="container">
-        <h1>Calculate BMI</h1>
+    <div className="container">
+      <Header />
 
-        <form>
-          <div>
-            <label for="height">Height:</label>
-            <input
-              id="height"
-              type="text"
-              class="form-control"
-              placeholder="Cm"
-            />
-          </div>
+      <BmiForm
+        heigth={heigth}
+        setHeight={setHeight}
+        weigth={weigth}
+        setWeigth={setWeigth}
+        setResult={setResult}
+      />
 
-          <div>
-            <label for="weight">Weight:</label>
-            <input
-              id="weight"
-              type="text"
-              class="form-control"
-              placeholder="Kg"
-            />
-          </div>
-
-          <button class="btn btn-success w-100">Calculate</button>
-        </form>
-
-        <p id="result"></p>
-      </div>
-    </>
+      <Result result={result} />
+    </div>
   );
 }
 
