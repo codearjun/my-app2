@@ -1,13 +1,13 @@
 import { useState } from "react";
-import "./app.scss";
+import "./App.scss";
 import BmiForm from "./components/BmiForm";
 import Header from "./components/Header";
 import Result from "./components/Result";
 
 function App() {
-  const [heigth, setHeight] = useState("");
-  const [weigth, setWeigth] = useState("");
-  const [result, setResult] = useState("");
+  const [heigth, setHeight] = useState(0);
+  const [weigth, setWeigth] = useState(0);
+  const [result, setResult] = useState(0);
 
   return (
     <div className="container">
