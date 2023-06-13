@@ -1,7 +1,7 @@
 import calculateBmi from "../common/calculateBmi";
 
 const BmiForm = (props) => {
-  const { height, weight, setHeight, setWeigth, SetResult } = props;
+  const { height, weight, setHeight, setWeigth, setResult } = props;
 
   return (
     <form>
@@ -14,7 +14,9 @@ const BmiForm = (props) => {
           placeholder="Cm"
           value={height}
           onChange={(event) => {
-            setHeight(event.target.value);
+            // setHeight(event.target.value);
+            const inputValue = Number(event.target.value);
+            setHeight(inputValue);
           }}
         />
       </div>
@@ -28,7 +30,9 @@ const BmiForm = (props) => {
           placeholder="Kg"
           value={weight}
           onChange={(event) => {
-            setWeigth(event.target.value);
+            // setWeigth(event.target.value);
+            const inputValue = Number(event.target.value);
+            setWeigth(inputValue);
           }}
         />
       </div>
@@ -37,7 +41,7 @@ const BmiForm = (props) => {
         className="btn btn-success w-100"
         onClick={() => {
           const result = calculateBmi(height, weight);
-          SetResult(result);
+          setResult(result);
         }}
         type="button"
       >
