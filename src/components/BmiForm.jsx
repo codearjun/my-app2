@@ -1,12 +1,12 @@
 import calculateBmi from "../common/calculateBmi";
 
 const BmiForm = (props) => {
-  const { height, weight, setHeight, setWeigth, setResult } = props;
+  const { height, weight, setHeight, setWeight, setResult } = props;
 
   return (
     <form>
       <div>
-        <label htmlfor="height">Height:</label>
+        <label htmlFor="height">Height:</label>
         <input
           id="height"
           type="text"
@@ -22,7 +22,7 @@ const BmiForm = (props) => {
       </div>
 
       <div>
-        <label htmlfor="weight">Weight:</label>
+        <label htmlFor="weight">Weight:</label>
         <input
           id="weight"
           type="text"
@@ -32,7 +32,7 @@ const BmiForm = (props) => {
           onChange={(event) => {
             // setWeigth(event.target.value);
             const inputValue = Number(event.target.value);
-            setWeigth(inputValue);
+            setWeight(inputValue);
           }}
         />
       </div>
